@@ -42,6 +42,9 @@ Here's how to connect the components.
 You can explore the circuit and run the simulation directly in your browser here: 
 https://www.tinkercad.com/things/5ggnVsAdmAc-automatic-lightning-system
 
+**Demo Video:**
+Watch the project in action on YouTube: https://youtu.be/C9k2AC_FBfg
+
 ## Arduino Code
 
 The Arduino code (`automatic_light_system.ino`) monitors the PIR sensor's output and controls the relay module accordingly.
