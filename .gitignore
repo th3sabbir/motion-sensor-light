@@ -1,0 +1,33 @@
+# Arduino specific files
+*.hex
+*.elf
+*.bin
+*.smap
+*.lss
+*.eep
+*.lst
+*.su
+*.map
+*.d
+*.o
+*.pde
+*.ino.hex
+*.ino.elf
+*.ino.bin
+
+# Arduino IDE specific files
+.arduino/
+.arduino-ide/
+.arduino-ci/
+.build/
+.vscode/
+
+# Build folder used by some IDEs (e.g., PlatformIO)
+.pio/
+.pioenvs/
+
+# macOS Finder files
+.DS_Store
+
+# Windows Thumbs.db files
+Thumbs.db
