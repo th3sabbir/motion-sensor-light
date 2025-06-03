@@ -47,8 +47,6 @@ https://www.tinkercad.com/things/5ggnVsAdmAc-automatic-lightning-system
 The Arduino code (`automatic_light_system.ino`) monitors the PIR sensor's output and controls the relay module accordingly.
 
 ```cpp
-// (Your Arduino C++ code goes here)
-// Example:
 // int pirPin = 2;   // PIR sensor connected to Digital Pin 2
 // int bulbPin = 5;  // Relay/Light bulb connected to Digital Pin 5
 //
