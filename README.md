@@ -50,24 +50,40 @@ Watch the project in action on YouTube: https://youtu.be/C9k2AC_FBfg
 The Arduino code (`automatic_light_system.ino`) monitors the PIR sensor's output and controls the relay module accordingly.
 
 ```cpp
-// int pirPin = 2;   // PIR sensor connected to Digital Pin 2
-// int bulbPin = 5;  // Relay/Light bulb connected to Digital Pin 5
-//
-// void setup() {
-//   pinMode(pirPin, INPUT);
-//   pinMode(bulbPin, OUTPUT);
-//   // Serial.begin(9600); // Optional: for debugging
-// }
-//
-// void loop() {
-//   int motionState = digitalRead(pirPin); // Read PIR sensor state
-//
-//   if (motionState == HIGH) { // If motion is detected
-//     digitalWrite(bulbPin, HIGH); // Turn light ON
-//     // Serial.println("Motion detected! Light ON."); // Optional debugging
-//     delay(200); // Keep light on for a short time to avoid flicker
-//   } else { // No motion
-//     digitalWrite(bulbPin, LOW); // Turn light OFF
-//     // Serial.println("No motion. Light OFF."); // Optional debugging
-//   }
-// }
+// C++ code for an Automatic Lighting System with PIR Motion Sensor
+
+// Define the pin numbers for our components
+int pir = 2;   // The PIR motion sensor's output pin is connected to Arduino Digital Pin 2
+int bulb = 5;  // The relay module (controlling the light bulb) is connected to Arduino Digital Pin 5
+
+void setup()
+{
+  // Initialize serial communication for debugging (optional, but good practice)
+  // Serial.begin(9600); 
+
+  // Set the PIR sensor pin as an INPUT, because we'll be reading data from it
+  pinMode(pir, INPUT);
+
+  // Set the bulb (relay) pin as an OUTPUT, because we'll be sending signals to control the light
+  pinMode(bulb, OUTPUT);
+}
+
+void loop()
+{
+  // Read the state of the PIR sensor.
+  // If motion is detected, digitalRead(pir) will be HIGH.
+  // If no motion, it will be LOW.
+  if (digitalRead(pir) == HIGH) {
+    // If motion is detected, turn the light ON (send a HIGH signal to the bulb pin)
+    digitalWrite(bulb, HIGH);
+    // Serial.println("Motion detected! Light ON."); // Optional: print message to Serial Monitor
+
+    // Add a small delay to debounce the sensor or keep the light on momentarily.
+    // Adjust this value if the light flickers or turns off too quickly.
+    delay(200); // Wait for 200 milliseconds (0.2 seconds)
+  } else {
+    // If no motion is detected, turn the light OFF (send a LOW signal to the bulb pin)
+    digitalWrite(bulb, LOW);
+    // Serial.println("No motion. Light OFF."); // Optional: print message to Serial Monitor
+  }
+}
